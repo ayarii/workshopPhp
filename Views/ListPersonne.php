@@ -22,10 +22,16 @@ foreach ($liste as $p) {
 <?= $p['id']; ?>
 <?= $p['nom']; ?>
 <?php echo ($p['prenom']); ?>
-<?php echo ($p['tel']);
-?>
+<?php echo ($p['email']); ?>
+<?php echo ($p['tel']); ?>
+<a href="modifierPersonne.php?id=<?= $p['id']; ?>">Modifier</a>
+<form action="supprimerPersonne.php" method="POST" style="display:inline;">
+    <input type="hidden" name="id" value="<?= $p['id']; ?>">
+    <input type="submit" value="Supprimer">
+</form>
 </li>
 <?php } ?>
 </ul>
+<a href="addPersonne.php">Ajouter une nouvelle personne</a>
 </body>
 </html>
